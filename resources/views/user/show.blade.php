@@ -3,7 +3,7 @@
 @include('footer')
 
 @section('content')
-<div class="container">
+
   <div class="profile-wrap">
     <div class="row">
       <div class="col-md-4 text-center">
@@ -11,8 +11,8 @@
           <p>
             <img class="round-img" src="{{ asset('storage/user_images/' . $user->profile_photo) }}"/>
           </p>
-          @else
-            <img class="round-img" src="{{ asset('/images/blank_profile.png') }}"/>
+        @else
+          <img class="round-img" src="{{ asset('/images/blank_profile.png') }}"/>
         @endif
       </div>
       <div class="col-md-8">

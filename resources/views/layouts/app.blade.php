@@ -17,8 +17,10 @@
   <body>
        @yield('navbar')
        
-       <div class="row">
+       <div class="container">
+         
          @yield('content')
+        
        </div>
        
        @yield('footer')
