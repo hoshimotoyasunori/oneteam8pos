@@ -49,6 +49,7 @@ class PostsController extends Controller
         $post->image = base64_encode(file_get_contents($request->photo));
         $post->save();
         
+        
         // $request->photo->storeAs('public/post_images', $post->id . '.jpg');
         
         // 「/」 ルートにリダイレクト
