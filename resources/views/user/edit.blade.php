@@ -15,7 +15,7 @@
             <label for="user_profile_photo">プロフィール写真</label><br>
                 @if ($user->profile_photo)
                     <p>
-                        <img src="{{ asset('storage/user_images/' . $user->profile_photo) }}" alt="avatar" />
+                        <img class="img-thumbnail rounded mx-auto d-block"  src="{{ asset('storage/user_images/' . $user->profile_photo) }}" alt="avatar" />
                     </p>
                 @endif
             <input type="file" name="user_profile_photo"  value="{{ old('user_profile_photo',$user->id) }}" accept="image/jpeg,image/gif,image/png" />
