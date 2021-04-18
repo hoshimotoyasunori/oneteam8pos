@@ -4,8 +4,9 @@
       <a class="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/{{ $comment->id }}"></a>
     @endif
     <span>
+      <!--コメントした人の名前-->
       <strong>
-        <a class="no-text-decoration black-color" href="/users/{{ $comment->user->id }}">{{ $comment->user->name }}</a>
+        <!--<a class="no-text-decoration black-color" href="/users/{{ $comment->user->id }}">{{ $comment->user->name }}</a>-->
       </strong>
     </span>
     <span>{{ $comment->comment }}</span>

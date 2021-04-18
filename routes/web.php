@@ -49,3 +49,8 @@ Route::post('/posts/{comment_id}/comments','CommentsController@store');
 //コメント取消処理
 Route::get('/comments/{comment_id}', 'CommentsController@destroy');
 
+
+
+
+
+Route::get('/posts/{post_id}', 'PostsController@show');

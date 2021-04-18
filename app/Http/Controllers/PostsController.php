@@ -62,5 +62,20 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/');
     }
-
+    
+    
+    
+    
+     public function show($post_id)
+    {
+        $post = Post::where('id', $post_id)
+            ->firstOrFail();
+            
+         // テンプレート「post/show.blade.php」を表示します。
+        return view('post/show', ['post' => $post]);
+    }
+    
+    
+    
+    
 }

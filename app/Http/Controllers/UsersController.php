@@ -15,6 +15,7 @@ class UsersController extends Controller
         // ログインしていなかったらログインページに遷移する（この処理を消すとログインしなくてもページを表示する）
         $this->middleware('auth');
     }
+    
     public function show($user_id)
     {
         $user = User::where('id', $user_id)
@@ -23,6 +24,7 @@ class UsersController extends Controller
          // テンプレート「user/show.blade.php」を表示します。
         return view('user/show', ['user' => $user]);
     }
+    
      public function edit()
     {
         $user = Auth::user();
@@ -30,6 +32,7 @@ class UsersController extends Controller
          // テンプレート「user/edit.blade.php」を表示します。
         return view('user/edit', ['user' => $user]);
     }
+    
      public function update(Request $request)
     {
         //バリデーション（入力値チェック）
