@@ -1,5 +1,5 @@
 @section('footer')
-<footer>
+<footer  class="fixed-bottom bg-light">
   <div class="container">
     <div class="text-center">
       <p>

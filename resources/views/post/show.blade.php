@@ -16,7 +16,13 @@
     <!--/////作成日時/////-->
          <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>
     <!--/////ユーザーネーム/////-->
-          <p>{{ $post->user->name }}</p>
+          <!--<p>{{ $post->user->name }}</p>-->
+    <!--/////消去ボタン/////-->
+            @if ($post->user->id == Auth::user()->id)
+         　　<a class="ml-auto mx-0 my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">
+              <div class="delete-post-icon"></div>
+            </a>
+            @endif
         </div>
     </div>
 <!--/////コメントBOX/////-->
