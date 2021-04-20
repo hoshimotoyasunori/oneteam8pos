@@ -27,6 +27,7 @@ class CommentsController extends Controller
         $comment->save();
 
         // 「/」 ルートにリダイレクト
+        // return view('post/show', ['post' => $post]);
         return redirect('/');
     }    
     
@@ -34,6 +35,7 @@ class CommentsController extends Controller
     {
         $comment = Comment::find($request->comment_id);
         $comment->delete();
+        // return view('post/show', ['post' => $post]);
         return redirect('/');
     }
     

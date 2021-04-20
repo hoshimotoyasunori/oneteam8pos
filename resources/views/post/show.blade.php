@@ -3,27 +3,30 @@
 @include('footer')
 
 @section('content')
-<div class="profile-wrap">
+<div class="container">
   <div class="row">
 <!--/////画像データ/////-->
-    <div class="col-md-10 text-left">
-        <p>
-          <img class="col" src="data:image/png;base64,{{ $post->image }}"/>
-        </p>
-        <div class="col">
-    <!--/////キャプション/////-->
-          <span><string>{{ $post->caption }}</string></span>
-    <!--/////作成日時/////-->
-         <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>
-    <!--/////ユーザーネーム/////-->
-          <!--<p>{{ $post->user->name }}</p>-->
-    <!--/////消去ボタン/////-->
-            @if ($post->user->id == Auth::user()->id)
-         　　<a class="ml-auto mx-0 my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">
-              <div class="delete-post-icon"></div>
-            </a>
-            @endif
-        </div>
+    <div class="col-md-10 text-left p-0">
+      <a href="/posts/{{ $post->id }}/drow">
+        <img class="col" src="data:image/png;base64,{{ $post->image }}"/>
+      </a>
+      <div >
+  <!--/////キャプション/////-->
+        <span><h4>{{ $post->caption }}</h4></span>
+  <!--/////作成日時/////-->
+        <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>
+        <br>
+  <!--/////詳細/////-->
+        <span><p>{{ $post->details }}</p></span>
+  <!--/////ユーザーネーム/////-->
+        <!--<p>{{ $post->user->name }}</p>-->
+  <!--/////消去ボタン/////-->
+        @if ($post->user->id == Auth::user()->id)
+     　　<a class="m-0" rel="nofollow" href="/postsdelete/{{ $post->id }}">
+          <div class="delete-post-icon "></div>
+        </a>
+        @endif
+      </div>
     </div>
 <!--/////コメントBOX/////-->
     <div class="col-md-2 border border-dark rounded">

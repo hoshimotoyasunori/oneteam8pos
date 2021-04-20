@@ -3,7 +3,7 @@
 @include('footer')
 
 @section('content')
-<div class="row">
+<div class="row px-4">
   @foreach ($posts as $post) 
     <div class="col-md-3 p-0">
       <!--<div class="card-wrap">-->

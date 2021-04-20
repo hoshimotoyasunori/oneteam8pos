@@ -34,7 +34,7 @@ class PostsController extends Controller
   public function store(Request $request)
   {
       //バリデーション（入力値チェック）
-      $validator = Validator::make($request->all() , ['caption' => 'required|max:255', 'photo' => 'required']);
+      $validator = Validator::make($request->all() , ['caption' => 'required|max:255','details' => 'required|max:255', 'photo' => 'required']);
 
         //バリデーションの結果がエラーの場合
         if ($validator->fails())
@@ -45,6 +45,7 @@ class PostsController extends Controller
         // Postモデル作成
         $post = new Post;
         $post->caption = $request->caption;
+        $post->details = $request->details;
         $post->user_id = Auth::user()->id;
         $post->image = base64_encode(file_get_contents($request->photo));
         $post->save();
@@ -66,13 +67,22 @@ class PostsController extends Controller
     
     
     
-     public function show($post_id)
+public function show($post_id)
     {
         $post = Post::where('id', $post_id)
             ->firstOrFail();
             
          // テンプレート「post/show.blade.php」を表示します。
         return view('post/show', ['post' => $post]);
+    }
+    
+public function drow($post_id)
+    {
+        $post = Post::where('id', $post_id)
+            ->firstOrFail();
+            
+         // テンプレート「post/show.blade.php」を表示します。
+        return view('post/drow', ['post' => $post]);
     }
     
     

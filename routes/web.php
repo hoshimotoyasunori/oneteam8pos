@@ -49,7 +49,8 @@ Route::post('/posts/{comment_id}/comments','CommentsController@store');
 //コメント取消処理
 Route::get('/comments/{comment_id}', 'CommentsController@destroy');
 
-
+// 画像編集画面
+Route::get('/posts/{post_id}/drow', 'PostsController@drow');
 
 
 
