@@ -53,11 +53,20 @@ class UsersController extends Controller
             $request->user_profile_photo->storeAs('public/user_images', $user->id . '.jpg');
             $user->profile_photo = $user->id . '.jpg';
         }
+        
         $user->password = bcrypt($request->user_password);
-         if ($request->user_profile_photo !=null) {
+        // ==========ここから追加する==========
+        if ($request->user_profile_photo !=null) {
             $user->image = base64_encode(file_get_contents($request->user_profile_photo));
         }
+        // ==========ここまで追加する==========
         $user->save();
+
+        // ==========ここからコメントアウトする==========        
+//        if ($request->user_profile_photo !=null) {
+//            $request->user_profile_photo->storeAs('public/user_images', $user->id . '.jpg');
+//        }
+        // ==========ここまでコメントアウトする==========
 
         return redirect('/users/'.$request->id);
     }
