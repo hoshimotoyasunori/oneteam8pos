@@ -12,6 +12,7 @@
     <!-- Styles -->
     <link href="{{ secure_asset('css/application.css') }}" rel="stylesheet">
     <!--<link href="{{ secure_asset('js/app.js') }}" rel="stylesheet">-->
+    <link href="{{ secure_asset('js/drow.js') }}" rel="stylesheet">
  
 
   </head>

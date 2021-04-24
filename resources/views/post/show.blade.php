@@ -6,9 +6,9 @@
 <div class="container">
   <div class="row">
 <!--/////画像データ/////-->
-    <div class="col-md-10 text-left p-0">
-      <a href="/posts/{{ $post->id }}/drow">
-        <img class="col" src="data:image/png;base64,{{ $post->image }}"/>
+    <div class="col-md-9 text-left p-0">
+      <a class="embed-responsive embed-responsive-16by9" href="/posts/{{ $post->id }}/drow">
+        <img class="card-img-top embed-responsive-item object-fit: cover;" src="data:image/png;base64,{{ $post->image }}"/>
       </a>
       <div >
   <!--/////キャプション/////-->
@@ -29,7 +29,7 @@
       </div>
     </div>
 <!--/////コメントBOX/////-->
-    <div class="col-md-2 border border-dark rounded">
+    <div class="col-md-3 border border-dark rounded">
     <!--/////コメント送信欄/////-->
         <div class="row actions border-bottom border-dark" id="comment-form-post-{{ $post->id }}">
        	  <form class="w-100" id="new_comment" action="/posts/{{ $post->id }}/comments" accept-charset="UTF-8" data-remote="true" method="post">

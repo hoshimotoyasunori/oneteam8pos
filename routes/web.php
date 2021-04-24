@@ -35,7 +35,7 @@ Route::get('/posts/new', 'PostsController@new')->name('new');
 Route::post('/posts','PostsController@store');
 
 //投稿削除処理
-Route::get('/postsdelete/{post_id}', 'PostsController@destroy');
+Route::get('/posts/delete/{post_id}', 'PostsController@destroy');
 
 //いいね処理
 Route::get('/posts/{post_id}/likes', 'LikesController@store');

@@ -85,7 +85,4 @@ public function drow($post_id)
         return view('post/drow', ['post' => $post]);
     }
     
-    
-    
-    
 }
