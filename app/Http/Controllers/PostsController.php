@@ -17,7 +17,7 @@ class PostsController extends Controller
   
   public function index()
   {
-      $posts = Post::limit(10)
+      $posts = Post::limit(20)
           ->orderBy('created_at', 'desc')
           ->get();
           

@@ -1,19 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "dev": "npm run development",
-    "development": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "start": "electron ."
   },
   "devDependencies": {
     "axios": "^0.21.1",
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.2.1",
     "css-loader": "^5.2.4",
+    "electron": "^12.0.5",
     "jquery": "^3.2",
     "laravel-mix": "^6.0.18",
     "lodash": "^4.17.4",
@@ -25,15 +20,17 @@
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "simple-peer": "^9.11.0",
-    "vue": "^2.5.7"
+    "vue": "^2.6.12"
   },
   "dependencies": {
-    "@babel/core": "^7.13.16"
+    "@babel/core": "^7.13.16",
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
   },
-  "name": "OneTeam",
+  "name": "oneteam",
   "description": "https://oneteam8pos.herokuapp.com/",
   "version": "1.0.0",
-  "main": "webpack.mix.js",
+  "main": "main.js",
   "directories": {
     "test": "tests"
   },
