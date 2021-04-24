@@ -39,7 +39,7 @@
 
 
 <h1>TEAM-TARGET</h1>
-<main id="data">
+<main id="data" class="bb">
     <div class="box">
         <!-- 表の上の列-->
         <table>
