@@ -1,21 +1,51 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "axios": "^0.17",
-        "bootstrap-sass": "^3.3.7",
-        "cross-env": "^5.1",
-        "jquery": "^3.2",
-        "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.5.7"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "bootstrap-sass": "^3.3.7",
+    "cross-env": "^5.2.1",
+    "css-loader": "^5.2.4",
+    "jquery": "^3.2",
+    "laravel-mix": "^6.0.18",
+    "lodash": "^4.17.4",
+    "mini-css-extract-plugin": "^1.5.0",
+    "minimatch": "^3.0.4",
+    "postcss": "^8.2.12",
+    "pusher-js": "^7.0.3",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "simple-peer": "^9.11.0",
+    "vue": "^2.5.7"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.16"
+  },
+  "name": "OneTeam",
+  "description": "https://oneteam8pos.herokuapp.com/",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoshimotoyasunori/oneteam8pos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoshimotoyasunori/oneteam8pos/issues"
+  },
+  "homepage": "https://github.com/hoshimotoyasunori/oneteam8pos#readme"
 }

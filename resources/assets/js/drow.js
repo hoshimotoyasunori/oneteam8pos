@@ -3,6 +3,16 @@ var CANVAS_SIZE;
 var undoDataStack = [];
 var redoDataStack = [];
 var mouseDown = false;
+
+/* global$*/
+/* global canvas $*/
+/* global stX $*/
+/* global stY $*/
+/* global context $*/
+/* global x $*/
+/* global y $*/
+/* global wbound $*/
+
 $(function() {
     $(document).ready(function(){
         $('#canvas').css('width', '600px');

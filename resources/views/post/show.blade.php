@@ -22,7 +22,7 @@
         <!--<p>{{ $post->user->name }}</p>-->
   <!--/////消去ボタン/////-->
         @if ($post->user->id == Auth::user()->id)
-     　　<a class="m-0" rel="nofollow" href="/postsdelete/{{ $post->id }}">
+     　　<a clas="ml-auto mx-0 my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">
           <div class="delete-post-icon "></div>
         </a>
         @endif

@@ -53,3 +53,5 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+window.Peer = require('simple-peer');
+window.Pusher = require('pusher-js');
