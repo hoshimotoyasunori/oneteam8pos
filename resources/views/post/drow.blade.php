@@ -16,12 +16,10 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div id="drawingComp">
-		<canvas id="canvas">
+<div id="drawingComp" class="w-100">
+		<canvas id="canvas" class="d-flex align-items-center justify-content-center w-100">
 		    <!--<img class="card-img-top embed-responsive-item object-fit: cover;" src="data:image/png;base64,{{ $post->image }}"/>-->
         </canvas>
-        <!--<img class="card-img-top embed-responsive-item object-fit: cover;" src="data:image/png;base64,{{ $post->image }}"/>-->
-    
 		<div class="controls">
 			<label id="clearLabel"><button id="clear">X</button> Clear</label>
 			<label id="blackColourLabel"><button id="blackColour">O</button> Black Colour</label>
@@ -79,7 +77,7 @@
     	whiteButton.addEventListener('click', () => ctx.strokeStyle = "#ffffff");
         });
         function drawImageToScale(img, ctx){
-        	const img_width = 1000;
+        	const img_width = 800;
         	const scaleFactor = img_width / img.width;
         	const img_height = img.height * scaleFactor;
         	ctx.drawImage(img, 0, 0,img_width,img_height);
