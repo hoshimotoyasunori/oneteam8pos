@@ -7,12 +7,21 @@
   <div class="row">
 <!--/////画像データ/////-->
     <div class="col-md-9 text-left p-0">
-      <a class="embed-responsive embed-responsive-16by9" href="/posts/{{ $post->id }}/drow">
+      <!--<a class="embed-responsive embed-responsive-16by9" href="/posts/{{ $post->id }}/drow">-->
         <img class="card-img-top embed-responsive-item object-fit: cover;" src="data:image/png;base64,{{ $post->image }}"/>
-      </a>
+      <!--</a>-->
       <div >
   <!--/////キャプション/////-->
-        <span><h4>{{ $post->caption }}</h4></span>
+        <div class="row mt-1">
+           <h4 class="col-md-11 m-0">{{ $post->caption }}</h4>
+            <!--/////消去ボタン/////-->
+            @if ($post->user->id == Auth::user()->id)
+         　　<a clas=" ml-auto my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">
+              <div class="delete-post-icon col-md-1"></div>
+            </a>
+            @endif
+        </div>
+              
   <!--/////作成日時/////-->
         <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>
         <br>
@@ -20,12 +29,7 @@
         <span><p>{{ $post->details }}</p></span>
   <!--/////ユーザーネーム/////-->
         <!--<p>{{ $post->user->name }}</p>-->
-  <!--/////消去ボタン/////-->
-        @if ($post->user->id == Auth::user()->id)
-     　　<a clas="ml-auto mx-0 my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">
-          <div class="delete-post-icon "></div>
-        </a>
-        @endif
+
       </div>
     </div>
 <!--/////コメントBOX/////-->
@@ -41,7 +45,7 @@
           </form>
         </div>
     <!--/////コメント一覧/////-->
-        <div>
+        <div class="" >
           <!--<span><strong>{{ $post->user->name }}</strong></span>-->
           <!--<span>{{ $post->caption }}</span>-->
           <div id="comment-post-{{ $post->id }}">

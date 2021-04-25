@@ -2,28 +2,16 @@
 @include('navbar')
 @include('footer')
 @section('content')
-<!--<img class="col-md-12 p-0" src="data:image/png;base64,{{ $post->image }}"/>-->
-     
-<!--<div>-->
-<!--    <div class="col-md-12 p-0">-->
-<!--       <canvas id="canvas" style="border:1px solid gray; ">-->
-<!--        <img class="col-md-12 p-0" src="data:image/png;base64,{{ $post->image }}"/>-->
-<!--       </canvas>-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <input type="button" id="undo" name="undo" value="undo">-->
-<!--        <input type="button" id="redo" name="redo" value="redo">-->
-<!--    </div>-->
-<!--</div>-->
 
-<div id="drawingComp" class="w-100">
-		<canvas id="canvas" class="d-flex align-items-center justify-content-center w-100">
+
+    <div id="drawingComp" class="m-1">
+		<canvas id="canvas" class="d-flex align-items-center justify-content-center w-100 p-0">
 		    <!--<img class="card-img-top embed-responsive-item object-fit: cover;" src="data:image/png;base64,{{ $post->image }}"/>-->
         </canvas>
-		<div class="controls">
-			<label id="clearLabel"><button id="clear">X</button> Clear</label>
-			<label id="blackColourLabel"><button id="blackColour">O</button> Black Colour</label>
-			<label id="whiteColourLabel"><button id="whiteColour">O</button> White Colour</label>
+		<div class="controls m-1">
+			<label id="clearLabel"><button id="clear">Clear</button> </label>
+			<label id="blackColourLabel"><button id="blackColour">Black</button></label>
+			<label id="whiteColourLabel"><button id="whiteColour">White</button></label>
 		</div>
 	</div>
 
@@ -52,6 +40,7 @@
     	canvas.addEventListener("mousedown", startPosition);
     	canvas.addEventListener("mouseup", finishedPosition);
     	canvas.addEventListener("mousemove", draw)
+    	
     	// variables
     	let painting = false;
     	function startPosition(e){
@@ -77,7 +66,7 @@
     	whiteButton.addEventListener('click', () => ctx.strokeStyle = "#ffffff");
         });
         function drawImageToScale(img, ctx){
-        	const img_width = 800;
+        	const img_width = 650;
         	const scaleFactor = img_width / img.width;
         	const img_height = img.height * scaleFactor;
         	ctx.drawImage(img, 0, 0,img_width,img_height);
@@ -87,24 +76,8 @@
         	ctx.clearRect(0,0, img_scaled_width, img_scaled_height);
         	drawImageToScale(img, ctx);
         }
+        
+  
     </script>
-<!--<script>-->
-<!--var data = "data:image/png;base64,{{ $post->image }}"; //Base64データ（省略しています）-->
- 
-<!--function setBase64(){-->
-<!--  //2Dコンテキストのオブジェクトを生成する-->
-<!--  var cvs = document.getElementById('canvas');-->
-<!--  var ctx= cvs.getContext('2d');-->
- 
-<!--  //画像オブジェクトを生成-->
-<!--  var img = new Image();-->
-<!--  img.src = data;-->
- 
-<!--  //画像をcanvasに設定-->
-<!--  img.onload = function(){-->
-<!--    ctx.drawImage(img, 0, 0, 200, 200);-->
-<!--  }-->
-<!--}-->
-<!--</script>-->
-<!--<script src="{{ asset('/js/drow.js') }}"></script>-->
+
 @endsection
