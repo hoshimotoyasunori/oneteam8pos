@@ -2,12 +2,12 @@
 @include('navbar')
 @include('footer')
 @section('content')
-<div class="panel-body">
+<div class="panel-body pt-5">
 <!-- バリデーションエラーの場合に表示 --> 
 @include('common.errors')
 
-<div class="d-flex flex-column align-items-center mt-3">
-    <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
+<div class="d-flex flex-column align-items-center ">
+    <!--<div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">-->
         <div class="card">
             <div class="card-header">
                 画像投稿
@@ -35,7 +35,7 @@
                 </form>      
             </div>
         </div>
-    </div>
+    <!--</div>-->
 </div>
 <script type="text/javascript">
   $('#post_image').bind('change', function() {

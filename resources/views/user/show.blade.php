@@ -37,9 +37,9 @@
 </div>  
 
 
-
-<h1>TEAM-TARGET</h1>
-<main id="data" class="bb">
+<div class="pb-5">
+<h1>"TARGET"</h1>
+<main id="data" class="bb ">
     <div class="box">
         <!-- 表の上の列-->
         <table>
@@ -228,7 +228,7 @@
         </table>
     </div>
 </main>
-
+</div>
 <!-- <footer>
     <a href="./index.html">select target</a>
     <div>　　　　　　</div>

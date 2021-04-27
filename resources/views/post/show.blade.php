@@ -3,37 +3,40 @@
 @include('footer')
 
 @section('content')
-<div class="container">
-  <div class="row">
-<!--/////画像データ/////-->
-    <div class="col-md-9 text-left p-0">
-      <!--<a class="embed-responsive embed-responsive-16by9" href="/posts/{{ $post->id }}/drow">-->
-        <img class="card-img-top embed-responsive-item object-fit: cover;" src="data:image/png;base64,{{ $post->image }}"/>
-      <!--</a>-->
-      <div >
-  <!--/////キャプション/////-->
-        <div class="row mt-1">
-           <h4 class="col-md-11 m-0">{{ $post->caption }}</h4>
+<!--<div class="container">-->
+  <div class="row   pb-5">
+      
+      
+  <!--  <div class="col-md-10 text-left">-->
+       <!--/////キャプション/////-->
+  <!--      <div class="row">-->
+  <!--         <h4 class="col-md-10 m-0">{{ $post->caption }}</h4>-->
             <!--/////消去ボタン/////-->
-            @if ($post->user->id == Auth::user()->id)
-         　　<a clas=" ml-auto my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">
-              <div class="delete-post-icon col-md-1"></div>
-            </a>
-            @endif
-        </div>
+  <!--          @if ($post->user->id == Auth::user()->id)-->
+  <!--       　　<a clas=" ml-auto my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">-->
+  <!--            <div class="delete-post-icon col-md-1"></div>-->
+  <!--          </a>-->
+  <!--          @endif-->
+  <!--      </div>-->
               
   <!--/////作成日時/////-->
-        <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>
-        <br>
+  <!--      <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>-->
+  <!--      <br>-->
   <!--/////詳細/////-->
-        <span><p>{{ $post->details }}</p></span>
+  <!--      <span><p>{{ $post->details }}</p></span>-->
   <!--/////ユーザーネーム/////-->
         <!--<p>{{ $post->user->name }}</p>-->
-
-      </div>
+  <!--  </div>  -->
+      
+      
+      <div  class="col-md-1 p-0"></div>
+<!--/////画像データ/////-->
+    <div class="col-md-8 text-left p-0">
+        <img class="card-img-top embed-responsive-item object-fit: cover;  border border-dark rounded" src="data:image/png;base64,{{ $post->image }}"/>
+      <!--</a>-->
     </div>
 <!--/////コメントBOX/////-->
-    <div class="col-md-3 border border-dark rounded">
+    <div class="col-md-2 border border-dark rounded ">
     <!--/////コメント送信欄/////-->
         <div class="row actions border-bottom border-dark" id="comment-form-post-{{ $post->id }}">
        	  <form class="w-100" id="new_comment" action="/posts/{{ $post->id }}/comments" accept-charset="UTF-8" data-remote="true" method="post">
@@ -45,18 +48,14 @@
           </form>
         </div>
     <!--/////コメント一覧/////-->
-        <div class="" >
+        <div class="overflow-auto" >
           <!--<span><strong>{{ $post->user->name }}</strong></span>-->
           <!--<span>{{ $post->caption }}</span>-->
           <div id="comment-post-{{ $post->id }}">
             @include('post.comment_list')
           </div>
         </div>  
-         
-          <!--<a class="btn btn-outline-dark common-btn edit-profile-btn" href="/users/edit">プロフィールを編集</a>-->
-          <!--<a class="btn btn-outline-dark common-btn edit-profile-btn" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>-->
-          <!--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>-->
     </div>
-  </div>
-</div>
+    <div  class="col-md-1 p-0"></div>
+<!--</div>-->
 @endsection

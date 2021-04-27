@@ -3,9 +3,9 @@
 @include('footer')
 @include('common.errors')
 @section('content')
-<div class="col-md-offset-2 mb-4 edit-profile-wrapper">
+<div class="col-md-offset-2 mb-4 edit-profile-wrapper pb-5">
   <div class="row">
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-8 mx-auto ">
       <div class="profile-form-wrap">
         <form class="edit_user" enctype="multipart/form-data" action="/users/update" accept-charset="UTF-8" method="post">
           <input name="utf8" type="hidden" value="&#x2713;" />
@@ -14,7 +14,7 @@
           <div class="form-group">
             <label for="user_profile_photo">プロフィール写真</label><br>
                  @if ($user->image)
-                    <p>
+                    <p class="w-50">
                       <img class="img-fluid" src="data:image/png;base64,{{ $user->image }}" alt="avatar" />
                     </p>
                   @endif
