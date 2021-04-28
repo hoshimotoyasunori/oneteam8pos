@@ -4,9 +4,16 @@
 
 @section('content')
 <!--<div class="container">-->
+<div class="row">
+        <div class="col-md-1 p-0"></div>
+        <div class="col-md-10 p-0">
+            <h4>{{ $post->caption }}</h4>
+            <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>
+            <span><p>{{ $post->details }}</p></span>
+        </div>
+        <div class="col-md-1 p-0"></div>
+    </div>
   <div class="row   pb-5">
-      
-      
   <!--  <div class="col-md-10 text-left">-->
        <!--/////キャプション/////-->
   <!--      <div class="row">-->
@@ -27,9 +34,8 @@
   <!--/////ユーザーネーム/////-->
         <!--<p>{{ $post->user->name }}</p>-->
   <!--  </div>  -->
-      
-      
-      <div  class="col-md-1 p-0"></div>
+ 
+    <div  class="col-md-1 p-0"></div>
 <!--/////画像データ/////-->
     <div class="col-md-8 text-left p-0">
         <img class="card-img-top embed-responsive-item object-fit: cover;  border border-dark rounded" src="data:image/png;base64,{{ $post->image }}"/>
@@ -57,5 +63,9 @@
         </div>  
     </div>
     <div  class="col-md-1 p-0"></div>
+</div>
+    
+  <!--<div class="row">-->
+    <!--</div>-->
 <!--</div>-->
 @endsection
