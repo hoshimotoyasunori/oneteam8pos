@@ -14,32 +14,10 @@
         <div class="col-md-1 p-0"></div>
     </div>
   <div class="row   pb-5">
-  <!--  <div class="col-md-10 text-left">-->
-       <!--/////キャプション/////-->
-  <!--      <div class="row">-->
-  <!--         <h4 class="col-md-10 m-0">{{ $post->caption }}</h4>-->
-            <!--/////消去ボタン/////-->
-  <!--          @if ($post->user->id == Auth::user()->id)-->
-  <!--       　　<a clas=" ml-auto my-auto" rel="nofollow" href="/postsdelete/{{ $post->id }}">-->
-  <!--            <div class="delete-post-icon col-md-1"></div>-->
-  <!--          </a>-->
-  <!--          @endif-->
-  <!--      </div>-->
-              
-  <!--/////作成日時/////-->
-  <!--      <string class="light-color post-time no-text-decoration " href="/posts/{{ $post->id }}">{{ $post->created_at }}</string>-->
-  <!--      <br>-->
-  <!--/////詳細/////-->
-  <!--      <span><p>{{ $post->details }}</p></span>-->
-  <!--/////ユーザーネーム/////-->
-        <!--<p>{{ $post->user->name }}</p>-->
-  <!--  </div>  -->
- 
     <div  class="col-md-1 p-0"></div>
 <!--/////画像データ/////-->
     <div class="col-md-8 text-left p-0">
         <img class="card-img-top embed-responsive-item object-fit: cover;  border border-dark rounded" src="data:image/png;base64,{{ $post->image }}"/>
-      <!--</a>-->
     </div>
 <!--/////コメントBOX/////-->
     <div class="col-md-2 border border-dark rounded ">
@@ -55,8 +33,6 @@
         </div>
     <!--/////コメント一覧/////-->
         <div class="overflow-auto" >
-          <!--<span><strong>{{ $post->user->name }}</strong></span>-->
-          <!--<span>{{ $post->caption }}</span>-->
           <div id="comment-post-{{ $post->id }}">
             @include('post.comment_list')
           </div>
