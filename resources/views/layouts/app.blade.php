@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
   <head>
-    <title>{{ config('app.name', 'OneTeam') }}</title>
+    <title>{{ config('app.name', 'Build-One') }}</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
       @yield('navbar')
     </header>
     <!--// <main>-->
-      <div class="container-fuild px-5 w-75">
+      <div class="container-fuild  w-75">
          
             @yield('content')
         
